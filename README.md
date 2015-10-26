@@ -1,7 +1,6 @@
 # ProjectCC - Submódulo perteneciente a [PeriodicoInteractivo](https://github.com/ProyectCC/PeriodicoInteractivo)
 
-### Proyecto desarrollado en la asignatura [CC](https://github.com/JJ/clases-CC-2015-16/)
-
+### Submódulo para el cambio de framework de desarrollo y/o reestructuración de la aplicación.
 
 
 
@@ -9,11 +8,25 @@
 
 Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCristobal).
 
+*Licencia: GPLv2*
 
+
+
+##Frameworks
+
+Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En el submódulo estudiaremos y trabajaremos con el que más se adapate a nuestro proyecto.
+
+### web.py
+
+
+### django
+
+
+***
 
 ##Documentación pycco
 
-Usaré [pycco](http://fitzgen.github.io/pycco/), "versión python de Docco".
+Para la documentación se usará [pycco](http://fitzgen.github.io/pycco/), "versión python de Docco".
 
 Una vez instalado con `sudo pip install pycco` ejecuto `pycco script.py` o `pycco *.py` si hay varios archivos python.
 
@@ -22,6 +35,7 @@ Los documentos generados (html con sus respectivos css) los puedo ver en el dire
 
 
 ##Integración continua
+![travis-ci](http://i.imgur.com/TRaIpqb.jpg)
 
 Para la integración continua usaremos [Travis-CI](https://travis-ci.org/).
 
@@ -32,6 +46,7 @@ Puedes ver el estado actual del proyecto en el *badge* superior o mediante [este
 
 
 ##Test
+![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
 Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para los tests se han usado las bibliotecas Mocha y Chai.
 
