@@ -18,8 +18,24 @@ Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: no
 
 ### web.py
 
+Una de las ventajas de [web.py](http://webpy.org/)es sus sencillez, y la gran cantidad de recursos que tiene:
+
+* URL dispacher
+* Templates
+* Acceso a Bases de Datos
+* Autentificación de usuarios y sesiones
+* Formularios
+* Servidor web propio para desarrollo
+
 
 ### django
+
+[Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
+Muy potente y framework más usado, se caracteriza por:
+
+* Rapidez
+* Seguro
+* Escalable
 
 
 ***
