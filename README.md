@@ -1,6 +1,6 @@
 # ProjectCC - Submódulo perteneciente a [PeriodicoInteractivo](https://github.com/ProyectCC/PeriodicoInteractivo)
 
-### Submódulo para el cambio de framework de desarrollo y/o reestructuración de la aplicación.
+### Submódulo para mejora o cambio de framework de desarrollo y reestructuración de la aplicación.
 
 
 
@@ -14,11 +14,11 @@ Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCri
 
 ##Frameworks
 
-Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En el submódulo estudiaremos y trabajaremos con el que más se adapate a nuestro proyecto.
+Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
 
 ### web.py
 
-Una de las ventajas de [web.py](http://webpy.org/)es sus sencillez, y la gran cantidad de recursos que tiene:
+Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran cantidad de recursos que tiene:
 
 * URL dispacher
 * Templates
@@ -28,14 +28,25 @@ Una de las ventajas de [web.py](http://webpy.org/)es sus sencillez, y la gran ca
 * Servidor web propio para desarrollo
 
 
-### django
+### TurboGears
+
+[Turbogears](http://www.turbogears.org/) es un potente framework con multitud de ventajas:
+
+* Puede empezar como micro-framework hasta alcanzar todas sus funcionalidades
+* Código natural y flexible
+* Conexión con varias BD y acceso a datos WSGI
+* Templates
+
+
+### Django
 
 [Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
-Muy potente y framework más usado, se caracteriza por:
+Muy potente y usado, se caracteriza por su:
 
 * Rapidez
-* Seguro
-* Escalable
+* Seguridad
+* Escalabilidad
+
 
 
 ***
