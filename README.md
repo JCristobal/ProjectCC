@@ -11,12 +11,22 @@ Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCri
 *Licencia: GPLv2*
 
 
+##Motivación
 
-##Frameworks
+Dado que partimos de una aplicación base, se decidió mejorar para conseguir una mejor estructura y ampliar sus funcionalidades. Para ello se estudiará cambiar el framework y sobre todo se reestructurará la aplicación, mejorando y ampliando sus funcionalidades actuales y permitiendo a los usuarios interactuar con periódico: agregando y valorando noticias.
+
+
+##Procedimiento de realización
+
+Realizaremos la aplicación de la forma más modular posible, centrándonos en cada módulo en un aspecto: mejora de la estructura, apariencia, gestión de la base de datos y usuarios, y realizando análisis y valoraciones.
+
+Ya que éste módulo se encargará de la estructura y del framework que se use, se usará uno de los siguientes, el que se adapte mejor a los requisitos del proyecto, mejorando el actual "periódico".
+
+###Frameworks
 
 Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
 
-### web.py
+#### web.py
 
 Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran cantidad de recursos que tiene:
 
@@ -28,7 +38,7 @@ Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran c
 * Servidor web propio para desarrollo
 
 
-### TurboGears
+#### TurboGears
 
 [Turbogears](http://www.turbogears.org/) es un potente framework con multitud de ventajas:
 
@@ -38,7 +48,7 @@ Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran c
 * Templates
 
 
-### Django
+#### Django
 
 [Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
 Muy potente y usado, se caracteriza por su:
@@ -46,6 +56,12 @@ Muy potente y usado, se caracteriza por su:
 * Rapidez
 * Seguridad
 * Escalabilidad
+
+
+
+##Relación con la asignatura [CC](https://github.com/JJ/clases-CC-2015-16/)
+
+Con el proyecto realizaremos un desarrollo DevOps, con múltiples herramientas evolucionando a lo largo del curso y practicando los distintos contenidos de éste. Realizaremos test para hacer pruebas unitarias, integración continua, provisionamiento y despligue automático. Dichas actividades se harán coincidiendo con la evolución de la asignatura.
 
 
 
