@@ -1,9 +1,9 @@
 # ProjectCC - Submódulo perteneciente a [PeriodicoInteractivo](https://github.com/ProyectCC/PeriodicoInteractivo)
 
-[![Join the chat at https://gitter.im/JCristobal/ProjectCC](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JCristobal/ProjectCC?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ### Submódulo para mejora o cambio de framework de desarrollo y reestructuración de la aplicación.
 
+
+[![Join the chat at https://gitter.im/JCristobal/ProjectCC](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JCristobal/ProjectCC?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 [![Build Status](https://travis-ci.org/JCristobal/ProjectCC.svg?branch=master)](https://travis-ci.org/JCristobal/ProjectCC)
@@ -26,40 +26,7 @@ Realizaremos la aplicación de la forma más modular posible, centrándonos en c
 
 Ya que éste módulo se encargará de la estructura y del framework que se use, se usará uno de los siguientes, el que se adapte mejor a los requisitos del proyecto, mejorando el actual "periódico".
 
-###Frameworks
 
-Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
-
-#### web.py
-
-Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran cantidad de recursos que tiene:
-
-* URL dispacher
-* Templates
-* Acceso a Bases de Datos
-* Autentificación de usuarios y sesiones
-* Formularios
-* Servidor web propio para desarrollo
-
-
-#### TurboGears
-
-[Turbogears](http://www.turbogears.org/) es un potente framework con multitud de ventajas:
-
-* Puede empezar como micro-framework hasta alcanzar todas sus funcionalidades
-* Código natural y flexible
-* Conexión con varias BD y acceso a datos WSGI
-* Templates
-
-
-#### Django
-
-[Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
-Muy potente y usado, se caracteriza por su:
-
-* Rapidez
-* Seguridad
-* Escalabilidad
 
 
 
@@ -67,9 +34,13 @@ Muy potente y usado, se caracteriza por su:
 
 Con el proyecto realizaremos un desarrollo DevOps, con múltiples herramientas evolucionando a lo largo del curso y practicando los distintos contenidos de éste. Realizaremos test para hacer pruebas unitarias, integración continua, provisionamiento y despligue automático. Dichas actividades se harán coincidiendo con la evolución de la asignatura.
 
+##Servicios a usar
+
+Ya que el proyecto está realizado en Python, no tendremos problema al desplegarlo, ya que multitud de PaaS soportan éste lenguaje: [Heroku](https://www.heroku.com/), [OpenShift](https://www.openshift.com/) o [BlueMix](https://console.ng.bluemix.net/), por ejemplo. 
+
+Además, también se usarán los servicios utilizados a lo largo de la asignatura o algunas variantes:
 
 
-***
 
 ##Documentación pycco
 
@@ -105,3 +76,39 @@ Para instalar Mocha, Chai y sus plugins:
 `sudo npm install mocha --save-dev`
 `sudo npm install chai`
 `sudo npm install chai-fs`
+
+
+###Frameworks
+
+Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
+
+#### web.py
+
+Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran cantidad de recursos que tiene:
+
+* URL dispacher
+* Templates
+* Acceso a Bases de Datos
+* Autentificación de usuarios y sesiones
+* Formularios
+* Servidor web propio para desarrollo
+
+
+#### TurboGears
+
+[Turbogears](http://www.turbogears.org/) es un potente framework con multitud de ventajas:
+
+* Puede empezar como micro-framework hasta alcanzar todas sus funcionalidades
+* Código natural y flexible
+* Conexión con varias BD y acceso a datos WSGI
+* Templates
+
+
+#### Django
+
+[Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
+Muy potente y usado, se caracteriza por su:
+
+* Rapidez
+* Seguridad
+* Escalabilidad
