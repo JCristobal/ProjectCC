@@ -13,12 +13,14 @@ Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCri
 
 ##Motivación
 
-Dado que partimos de una aplicación base, se decidió mejorar para conseguir una mejor estructura y ampliar sus funcionalidades. Para ello se estudiará cambiar el framework y sobre todo se reestructurará la aplicación, mejorando y ampliando sus funcionalidades actuales y permitiendo a los usuarios interactuar con periódico: agregando y valorando noticias.
+Partimos de una aplicación base de un "periódico" que se puede decir que sólo es el esqueleto de lo que será nuestra aplicación. De ésta base contruiremos un *periódico interactivo* en el que los usuarios podrán participar y valorar en distintas noticias.
+
+En este submódulo se construirá la aplicación para conseguir una mejor estructura y ampliar sus funcionalidades. Para ello se trabajará en este repositorio con unas noticias (y sus respectivas valoraciones), análisis y usuarios estándar, que los otros submódulos se encargarán de gestionar.
 
 
 ##Procedimiento de realización
 
-Realizaremos la aplicación de la forma más modular posible, centrándonos en cada módulo en un aspecto: mejora de la estructura, apariencia, gestión de la base de datos y usuarios, y realizando análisis y valoraciones.
+Realizaremos la aplicación de la forma más modular posible, centrándonos en cada módulo en un aspecto: mejora de la estructura, apariencia, gestión de la base de datos y usuarios, y realizando análisis y valoraciones. 
 
 Ya que éste módulo se encargará de la estructura y del framework que se use, se usará uno de los siguientes, el que se adapte mejor a los requisitos del proyecto, mejorando el actual "periódico".
 
