@@ -1,15 +1,12 @@
 # .scrutinizer.yml
 
 checks:
-    php:
-        code_rating: true
-        duplication: true
-
     python:
         code_rating: true
         duplicate_code: true
 
-    ruby:
-        code_rating: true
-        duplicate_code: true
 
+tools:
+    pylint:
+        python_version: 2     # Possible values: 2, 3
+        config_file: '.pylintrc'
