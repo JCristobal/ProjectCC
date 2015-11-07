@@ -4,54 +4,14 @@ var chai = require('chai');//Biblioteca para Mocha
 var expect = chai.expect;
 chai.use(require('chai-fs'));
 
-/*
-objCalculator = {
-  addNumber: function(a, b){
-    return a + b;
-  },
+var request = require('supertest');//Biblioteca para comprobar servidores web
+var urlServidor = "http://localhost:8080";//URL del servidordonde se ejecuta la aplicación
+var segunda = "http://localhost:8080/registro";
 
-  substractNumber: function(a, b){
-    return a - b;
-  },
-
-  multiplyNumber: function(a, b){
-    return a * b;
-  },
-
-  divideNumber: function(a, b){
-    return a / b;
-  }
-}
-*/
 
 describe('Test básicos', function() {
 
-/*
-  describe('Elementos con indexOf()', function () {
-    it('basic test: should return -1 when the value is not present', function (done) {
-      assert.equal(-1, [1,2,3].indexOf(5));
-      assert.equal(-1, [1,2,3].indexOf(0));
-      done();
-    });
-  });
-*/
 
-/*
-  describe('Operaciones básicas con funciones locales', function () {
-    it('Sumamos 2 y 3', function (done) {
-      assert.equal(5, objCalculator.addNumber(2, 3));
-      done();
-    });
-    it('Multiplicamos 2 y 2', function (done) {
-      assert.equal(4, objCalculator.multiplyNumber(2, 2));
-      done();
-    });
-    it('Dividimos 3 y 1', function (done) {
-      assert.equal(3, objCalculator.divideNumber(3, 1));
-      done();
-    });
-  });
-*/
 
 
   describe('Comprobamos archivos', function () {
@@ -70,7 +30,26 @@ describe('Test básicos', function() {
   });
 
 
+  describe('Pruebas de servidor', function () {
 
+    it('Comprobando que el servidor está activo', function (done) {
+      request(urlServidor).get('/').expect(200).end(function(err, res){
+      if (err)
+        return done(err)
+        done();
+      });
+    });
+
+    it('Comprobando que la sección de logueo es accesible', function (done) {
+      request(segunda).get('/').expect(200).end(function(err, res){
+      if (err)
+        return done(err)
+        done();
+      });
+    });
+
+
+  })
 
 
 

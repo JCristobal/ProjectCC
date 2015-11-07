@@ -84,18 +84,23 @@ El proceso que se sigue es el siguiente:
 ![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
 
-[Mocha](http://mochajs.org/) es un framework para NodeJS para hacer tests unitarios que permite el uso de distintas bibliotecas de aserciones (ya que no dispone de un módulo propio). Usaremos este framework junto a la biblioteca Chai.
+[Mocha](http://mochajs.org/) es un framework para NodeJS para hacer tests unitarios que permite el uso de distintas bibliotecas de aserciones (ya que no dispone de un módulo propio). Usaremos este framework junto a la biblioteca Chai y Supertest.
 
 [Chai](http://chaijs.com/) es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador, que integraremos con  Mocha. Chai nos ayuda a realizar aserciones contra nuestro código. Es muy completo ya que, sin necesidad de plugins, y tiene 2 estilos con los que podemos realizar las aserciones: podemos optar por el estilo TDD (Test-driven development) o BDD(Behavior-Driven Development).
+
+[Supertest](https://github.com/visionmedia/supertest) es otra librería para hacer aserciones HTTP. Permite hacer pruebas HTTP de alto nivel
+ y así poder compobar el funcionamiento de nuestro servidor.
+
 
 Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para realizarlos ejecutamos `npm test`.
 
 
-Para instalar Mocha, Chai y sus plugins:
+Para instalar Mocha y las distintas librerias:
 
 `sudo npm install mocha --save-dev`
 `sudo npm install chai`
 `sudo npm install chai-fs`
+`sudo npm install supertest`
 
 
 ###Frameworks
