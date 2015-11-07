@@ -60,15 +60,33 @@ Para la integración continua usaremos [Travis-CI](https://travis-ci.org/).
 Travis provee integración continua hosteada y tiene una integración con GitHub muy sencilla.
 Además soporta despliegue para Openshift, Heroku, etc...
 
-Puedes ver el estado actual del proyecto en el *badge* superior o mediante [este enlace](https://travis-ci.org/JCristobal/ProjectCC).
+Lo podemos configurar con el fichero [.travis.yml](https://github.com/JCristobal/ProjectCC/blob/master/.travis.yml) en el directorio raiz de nuestro repositorio. Podremos describir lo que necesita instalar, ejecutar, probar los test y qué hacer después de todo ello.
+
+Puedes ver el estado actual del proyecto en el *badge* [![Build Status](https://travis-ci.org/JCristobal/ProjectCC.svg?branch=master)](https://travis-ci.org/JCristobal/ProjectCC) o mediante [este enlace](https://travis-ci.org/JCristobal/ProjectCC).
+
+
+El proceso que se sigue es el siguiente:
+
+* Se hace un push en el proyecto
+* GitHub envía una petición POST a los servidores de Travis para que haga un nuevo build.
+* Travis nos muestra la versión de distintos programas que tiene instalados y pueden sernos útiles
+* Clona nuestro repositorio
+* Exporta variables de entorno que hayamos declarado en Travis
+* Lee el fichero *.travis.yml* del repositorio. Detecta el lenguaje que se usará (python en nuestro caso) e instala paquetes necesarios y prepara el entorno
+* Después se ejecuta (si está declarada) la sección "before_script" de nuestro *.travis.yml*
+* Se ejecutan los test. Si alguno falla, se  podría ejecutar la sección "after_failure" (y más adelante no desplegar el proyecto en el Paas e IaaS)
+
 
 
 ##Test
 ![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
-Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para los tests se han usado las bibliotecas Mocha y Chai.
 
-[Mocha](http://mochajs.org/) es un framework para NodeJS para hacer tests unitarios y [Chai](http://chaijs.com/) es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador.
+[Mocha](http://mochajs.org/) es un framework para NodeJS para hacer tests unitarios que permite el uso de distintas bibliotecas de aserciones (ya que no dispone de un módulo propio). Usaremos este framework junto a la biblioteca Chai.
+
+[Chai](http://chaijs.com/) es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador, que integraremos con  Mocha. Chai nos ayuda a realizar aserciones contra nuestro código. Es muy completo ya que, sin necesidad de plugins, y tiene 2 estilos con los que podemos realizar las aserciones: podemos optar por el estilo TDD (Test-driven development) o BDD(Behavior-Driven Development).
+
+Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para realizarlos ejecutamos `npm test`.
 
 
 Para instalar Mocha, Chai y sus plugins:

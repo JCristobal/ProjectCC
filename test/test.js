@@ -4,7 +4,7 @@ var chai = require('chai');//Biblioteca para Mocha
 var expect = chai.expect;
 chai.use(require('chai-fs'));
 
-
+/*
 objCalculator = {
   addNumber: function(a, b){
     return a + b;
@@ -22,10 +22,11 @@ objCalculator = {
     return a / b;
   }
 }
-
+*/
 
 describe('Test básicos', function() {
 
+/*
   describe('Elementos con indexOf()', function () {
     it('basic test: should return -1 when the value is not present', function (done) {
       assert.equal(-1, [1,2,3].indexOf(5));
@@ -33,10 +34,10 @@ describe('Test básicos', function() {
       done();
     });
   });
+*/
 
-
-
-  describe('Operaciones básicas con fucnciones locales', function () {
+/*
+  describe('Operaciones básicas con funciones locales', function () {
     it('Sumamos 2 y 3', function (done) {
       assert.equal(5, objCalculator.addNumber(2, 3));
       done();
@@ -50,7 +51,7 @@ describe('Test básicos', function() {
       done();
     });
   });
-
+*/
 
 
   describe('Comprobamos archivos', function () {
