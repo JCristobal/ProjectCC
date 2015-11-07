@@ -12,6 +12,8 @@ Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCri
 
 *Licencia: GPLv2*
 
+*[Documentación](http://jcristobal.github.io/ProjectCC/)*
+
 
 ##Motivación
 
