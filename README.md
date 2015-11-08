@@ -89,7 +89,7 @@ El proceso que se sigue es el siguiente:
 [Chai](http://chaijs.com/) es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador, que integraremos con  Mocha. Chai nos ayuda a realizar aserciones contra nuestro código. Es muy completo ya que, sin necesidad de plugins, y tiene 2 estilos con los que podemos realizar las aserciones: podemos optar por el estilo TDD (Test-driven development) o BDD(Behavior-Driven Development).
 
 [Supertest](https://github.com/visionmedia/supertest) es otra librería para hacer aserciones HTTP. Permite hacer pruebas HTTP de alto nivel
- y así poder compobar el funcionamiento de nuestro servidor.
+ y así poder compobar el funcionamiento de nuestro servidor. *Los test con Supertest los haremos sólo en local, ya que no podemos desplegar el servidor en Travis para que realice los test.*
 
 
 Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para realizarlos ejecutamos `npm test`.
