@@ -80,6 +80,12 @@ El proceso que se sigue es el siguiente:
 
 
 
+![shippable](https://i.gyazo.com/d303dee5b6b150aa9d70053682a79f26.png)
+
+También usaremos una integración básica en [Shippable](https://app.shippable.com/), podemos ver el estado de proyecto en [su web](https://app.shippable.com/projects/563fafac1895ca447422f754).
+
+
+
 ##Test
 ![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
