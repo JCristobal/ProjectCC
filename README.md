@@ -7,7 +7,7 @@
 
 
 [![Build Status](https://travis-ci.org/JCristobal/ProjectCC.svg?branch=master)](https://travis-ci.org/JCristobal/ProjectCC)
-![[buildstatus](https://app.shippable.com/projects/563fafac1895ca447422f754)](https://img.shields.io/shippable/563fafac1895ca447422f754.svg)
+[![build status shippable](https://img.shields.io/shippable/563fafac1895ca447422f754.svg)](https://app.shippable.com/projects/563fafac1895ca447422f754)
 
 [![license](https://img.shields.io/badge/license-GPL%202.0-yellow.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
