@@ -7,10 +7,13 @@
 
 
 [![Build Status](https://travis-ci.org/JCristobal/ProjectCC.svg?branch=master)](https://travis-ci.org/JCristobal/ProjectCC)
+![[buildstatus](https://app.shippable.com/projects/563fafac1895ca447422f754)](https://img.shields.io/shippable/563fafac1895ca447422f754.svg)
+
+[![license](https://img.shields.io/badge/license-GPL%202.0-yellow.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+
 
 Responsable del módulo: [José Cristóbal López Zafra](https://github.com/JCristobal).
 
-*Licencia: GPLv2*
 
 *[Documentación](http://jcristobal.github.io/ProjectCC/)*
 
@@ -108,6 +111,9 @@ Para instalar Mocha y las distintas librerias:
 `sudo npm install chai`
 `sudo npm install chai-fs`
 `sudo npm install supertest`
+
+
+En [esta imagen](http://i.imgur.com/TUTInja.png) puedes ver la primera versión de test ejecutada.
 
 
 ###Frameworks
