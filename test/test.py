@@ -23,13 +23,13 @@ def existe_clase(clase):
 		return 0
 
 # test para comprobar que nos hemos conectado
-def test_dbcon(self):
+def test_dbcon():
 	return db==client.usuarios
 
 # test para compobar el conjunto de meses
-def test_meses(self):
+def test_meses():
 	lista = [1,2,3,4,5,6,7,8,9,10,11,12]
-	return self.assertEqual(lista,meses)
+	return lista==meses
 
 
 # Clase en la que realizamos los test
@@ -78,10 +78,10 @@ class test (unittest.TestCase):
 	existe_clase(eventos_twitter)
 
     def test_14(self):	
-	test_dbcon(self)
+	test_dbcon()
 
     def test_15(self):	
-	test_meses(self)
+	test_meses()
 
 
 if __name__ == "__main__":
