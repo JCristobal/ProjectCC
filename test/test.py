@@ -29,7 +29,7 @@ def test_dbcon(self):
 # test para compobar el conjunto de meses
 def test_meses(self):
 	lista = [1,2,3,4,5,6,7,8,9,10,11,12]
-	return self.assertListEqual(lista,meses)
+	return self.assertEqual(lista,meses)
 
 
 # Clase en la que realizamos los test
