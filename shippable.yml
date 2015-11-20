@@ -5,7 +5,17 @@ language: python
 python:
    - "2.6"
    - "2.7"
-   
+
+services:
+   - mongodb
+
+before_script: 
+   - "cp script.py test/script.py"
+   - "cp keys.py test/keys.py"
+
 #Instalar requerimientos 
 install:
    - pip install -r requirements.txt
+
+script:
+   - nosetests test/test.py
