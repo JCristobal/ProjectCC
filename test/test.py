@@ -59,12 +59,12 @@ def insertarUsuario():
 def editarUsuario():
 
    	posts=db.posts
-        posts.update( { "user": "test" }, { '$set': { "nombre": "test_nombre2"}})
+        posts.update( { "user": "test" }, { '$set': { "nombre": "test_nombre_editado"}})
 
 	#Comprobamos si realmente se ha actualizado bien la base de datos
 	query=posts.find({"user": "test"})
 
-	return query[0]["nombre"] == "test_nombre2"
+	return query[0]["nombre"] == "test_nombre_editado"
 
 #Borrado de un usuario de la base de datos
 def borrarUsuario():
@@ -75,74 +75,79 @@ def borrarUsuario():
 	query=posts.find({"user": "test"})
 
 	return query.count() == 0
-	
-# Clase en la que realizamos los test con la BD
-class test_bd(unittest.TestCase):	
-    def test_insertar(self):
-        print "Insertando en la BD"
-        self.assertTrue(insertarUsuario())
-	
-    def test_editar(self):
-        print "Editando en la BD"
-        insertarUsuario()
-        self.assertTrue(editarUsuario())
 
-    def test_borrar(self):
-        print "Borrando de la BD"
-        insertarUsuario()
-        self.assertTrue(borrarUsuario())
 
 
 # Clase en la que realizamos los test basicos
 class test (unittest.TestCase):
 
+    print "Test básicos"	
+
     def test_1(self):	
-	existe("script.py")
+        self.assertTrue(existe("script.py"))
 
     def test_2_1(self):	
-	existe("docs/pycco.css")
+        self.assertTrue(existe("docs/pycco.css"))
 
     def test_2_2(self):	
-	existe("docs/script.html")
+        self.assertTrue(existe("docs/script.html"))
 
     def test_3(self):	
-	existe_clase(registro) 
+        self.assertTrue(existe_clase(registro))
 
     def test_4(self):	
-	existe_clase(login)
+        self.assertTrue(existe_clase(login))
 
     def test_5(self):	
-	existe_clase(logout)
+        self.assertTrue(existe_clase(logout))
 
     def test_6(self):	
-	existe_clase(ver_perfil)
+        self.assertTrue(existe_clase(ver_perfil))
 
     def test_7(self):	
-	existe_clase(editar_perfil)
+        self.assertTrue(existe_clase(editar_perfil))
 
     def test_8(self):	
-	existe_clase(mas_visitadas)
+        self.assertTrue(existe_clase(mas_visitadas))
 
     def test_9(self):	
-	existe_clase(rss)
+        self.assertTrue(existe_clase(rss))
 
     def test_10(self):	
-	existe_clase(highchart)
+        self.assertTrue(existe_clase(highchart))
 
     def test_11(self):	
-	existe_clase(mapa)
+        self.assertTrue(existe_clase(mapa))
 
     def test_12(self):	
-	existe_clase(twitter)
+        self.assertTrue(existe_clase(twitter))
 
     def test_13(self):	
-	existe_clase(eventos_twitter)
+        self.assertTrue(existe_clase(eventos_twitter))
 
     def test_14(self):	
-	test_dbcon()
+        self.assertTrue(test_dbcon())
 
     def test_15(self):	
-	test_meses()
+        self.assertTrue(test_meses())
+
+
+	
+# Clase en la que realizamos los test con la BD
+class test_bd(unittest.TestCase):
+
+    print "Test con la BD"	
+
+    def test_insertar(self):
+        self.assertTrue(insertarUsuario())
+	
+    def test_editar(self):
+        insertarUsuario()
+        self.assertTrue(editarUsuario())
+
+    def test_borrar(self):
+        insertarUsuario()
+        self.assertTrue(borrarUsuario())
 
 
 if __name__ == "__main__":
