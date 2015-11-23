@@ -48,7 +48,7 @@ def insertarUsuario():
 
 
 	posts=db.posts
-	post_id = posts.insert(post) 
+	post_id = posts.insert_one(post) 
 
 	#Comprobamos si realmente se ha insertado en la base de datos
 	query=posts.find({"user": "test"})
@@ -59,7 +59,7 @@ def insertarUsuario():
 def editarUsuario():
 
    	posts=db.posts
-        posts.update( { "user": "test" }, { '$set': { "nombre": "test_nombre_editado"}})
+        posts.update_one( { "user": "test" }, { '$set': { "nombre": "test_nombre_editado"}})
 
 	#Comprobamos si realmente se ha actualizado bien la base de datos
 	query=posts.find({"user": "test"})
@@ -70,7 +70,7 @@ def editarUsuario():
 def borrarUsuario():
 	
 	posts=db.posts
-	posts.remove({"user" : "test"})
+	posts.delete_one({"user" : "test"})
 
 	query=posts.find({"user": "test"})
 
