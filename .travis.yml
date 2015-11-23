@@ -7,6 +7,9 @@ before_install:
   - "cp script.py test/script.py"
   - "cp keys.py test/keys.py"
 
+services:
+  - mongodb
+
 # command to install dependencies
 install: "pip install -r requirements.txt"
 # command to run tests
