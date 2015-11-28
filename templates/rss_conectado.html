@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-	<title>Practica 3 - DAI</title>
-	<meta content="jmgn" name="author" />
+	<title>PeriodicoInteractivo</title>
+	<meta name="author" content="ProyectCC">
 	<meta charset="UTF-8" />
 	<link href="../static/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -37,7 +37,10 @@
 		<div id="contenido">
 
 			<h2><center>RSS </center></h2>
-			
+
+			<% long = len(feed['entries']) %> 
+			<p> Hay un total de ${long} entradas del RSS </p>
+
 			% for i in range(len(feed.entries)):
 			    <a href='${feed.entries[i].link}'>${feed.entries[i].title}</a>
 			    <br />
@@ -47,7 +50,7 @@
 		</div>
 
 		<div id="footer">
-			<p>Autor: <b>jmgn</b></p>
+			<p><a href="https://github.com/ProyectCC"> Grupo <b>ProyectCC</b> </a> </p>
 		</div>
 
 		

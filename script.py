@@ -32,7 +32,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 
-feed= feedparser.parse('portada_elpais.xml')
+feed= feedparser.parse("http://ep00.epimg.net/rss/ccaa/andalucia.xml")
 
 app = web.application(urls, globals(), autoreload=True)
 
@@ -340,16 +340,16 @@ class rss:
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        try: 
-            res="Bienvenido usuario: %s " % (web.cookies().user)
-            web.setcookie('pagina3', web.cookies().pagina2)
-            web.setcookie('pagina2', web.cookies().pagina1)
-            web.setcookie('pagina1', "rss")
-            return plantillas.rss_conectado(formulario=res, feed=feed)
-        except:
-            l=form_log()
-            web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
+        #try: 
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            #web.setcookie('pagina3', web.cookies().pagina2)
+            #web.setcookie('pagina2', web.cookies().pagina1)
+            #web.setcookie('pagina1', "rss")
+        return plantillas.rss_conectado(formulario=res, feed=feed)
+        #except:
+            #l=form_log()
+            #web.header('Content-Type', 'text/html; charset=utf-8')
+            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
 
 # clase donde trabajamos con Highcharts
 class highchart:
@@ -357,16 +357,16 @@ class highchart:
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        try: 
-            res="Bienvenido usuario: %s " % (web.cookies().user)
-            web.setcookie('pagina3', web.cookies().pagina2)
-            web.setcookie('pagina2', web.cookies().pagina1)
-            web.setcookie('pagina1', "highchart")
-            return plantillas.highchart(formulario=res)
-        except:
-            l=form_log()
-            web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
+        #try: 
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            #web.setcookie('pagina3', web.cookies().pagina2)
+            #web.setcookie('pagina2', web.cookies().pagina1)
+            #web.setcookie('pagina1', "highchart")
+        return plantillas.highchart(formulario=res)
+        #except:
+            #l=form_log()
+            #web.header('Content-Type', 'text/html; charset=utf-8')
+            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
 
 # clase donde trabajamos con maps
 class mapa:
@@ -374,16 +374,16 @@ class mapa:
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        try: 
-            res="Bienvenido usuario: %s " % (web.cookies().user)
-            web.setcookie('pagina3', web.cookies().pagina2)
-            web.setcookie('pagina2', web.cookies().pagina1)
-            web.setcookie('pagina1', "mapa")
-            return plantillas.mapa(formulario=res)
-        except:
-            l=form_log()
-            web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
+        #try: 
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            #web.setcookie('pagina3', web.cookies().pagina2)
+            #web.setcookie('pagina2', web.cookies().pagina1)
+            #web.setcookie('pagina1', "mapa")
+        return plantillas.mapa(formulario=res)
+        #except:
+            #l=form_log()
+            #web.header('Content-Type', 'text/html; charset=utf-8')
+            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
 
 
 # clase donde trabajamos con Twitter
@@ -394,16 +394,16 @@ class twitter:
             l2 = form_twitter_usuario();
             base_datos=""
             rt_medio=0
-            res="Bienvenido usuario: %s " % (web.cookies().user)
-            web.setcookie('pagina3', web.cookies().pagina2)
-            web.setcookie('pagina2', web.cookies().pagina1)
-            web.setcookie('pagina1', "twitter")
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            #web.setcookie('pagina3', web.cookies().pagina2)
+            #web.setcookie('pagina2', web.cookies().pagina1)
+            #web.setcookie('pagina1', "twitter")
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.twitter(base_datos=base_datos, formulario=res, form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda="", tweets="", rt_medio=rt_medio)
+            return plantillas.twitter(base_datos=base_datos, formulario="", form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda="", tweets="", rt_medio=rt_medio)
         except:
             l=form_log()
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")
+            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error 1. Inicie sesion de nuevo.")
 
 
     def POST(self):
@@ -445,7 +445,7 @@ class twitter:
         except:
             l=form_log()
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")
+            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error.")
 
 # clase donde trabajamos con los eventos de Twitter
 class eventos_twitter:
@@ -466,38 +466,9 @@ class eventos_twitter:
 
             return plantillas.eventos_twitter(form= l.render(), tweets=tweets, locations=locations)
 
-'''
-# Añado los test
-import unittest
 
-class TestMethods(unittest.TestCase):
 
-  #test básicos comprbando strings
-  def test_upper(self):
-      self.assertEqual('foo'.upper(), 'FOO')
-  def test_isupper(self):
-      self.assertTrue('FOO'.isupper())
-      self.assertFalse('Foo'.isupper())
-  def test_split(self):
-      s = 'hello world'
-      self.assertEqual(s.split(), ['hello', 'world'])
-      # check that s.split fails when the separator is not a string
-      with self.assertRaises(TypeError):
-          s.split(2)
 
-  # test para comprobar que nos hemos conectado
-  def test_dbcon(self):
-      client = MongoClient()
-      db = client.usuarios
-  # test para compobar el conjunto de meses
-  def test_meses(self):
-      lista = [1,2,3,4,5,6,7,8,9,10,11,12]
-      self.assertListEqual(lista,meses)
-    
-    
-suite = unittest.TestLoader().loadTestsFromTestCase(TestMethods)
-unittest.TextTestRunner(verbosity=2).run(suite)
-'''
 
 
 
