@@ -91,6 +91,13 @@ También usaremos una integración básica en [Shippable](https://app.shippable.
 
 
 ##Test
+
+### unittest
+
+**[unittest](https://docs.python.org/2/library/unittest.html)** es un marco pruebas unitarias Python: es una versión en Python de JUnit  que, a su vez, es una versión Java de marco de pruebas Smalltalk. Cada uno es el marco de pruebas de unidad estándar de facto para su respectivo idioma.
+
+unittest soporta la automatización de pruebas, cambio de configuraciones y "apagado" del código si no pasa las pruebas o la independencia de las pruebas de la estructura de información. Proporciona clases que hacen que sea fácil apoyar estas cualidades para un conjunto de pruebas.
+
 ![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
 
