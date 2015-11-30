@@ -24,6 +24,10 @@ urls = ( '/logout', 'logout',
 
 # Consumer keys and access tokens, used for OAuth
 # (declaradas en Heroku)
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 # OAuth process, using the keys and tokens
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
