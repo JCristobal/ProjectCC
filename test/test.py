@@ -5,7 +5,7 @@ import os
 import inspect
 
 from script import *
-from keys import *
+
 
 
 # test para compobar que la ruta a un archivo (o archivo) existe
