@@ -80,7 +80,7 @@ fallo en un "Dyno", este es eliminado y creado nuevamente.
 
 En nuestro caso, la aplicación desplegada está asociada a este repositorio:
 
-[connect to github](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
+[Conectado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
 
 Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
 

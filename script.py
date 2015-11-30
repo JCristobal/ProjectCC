@@ -344,33 +344,16 @@ class rss:
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        #try: 
-            #res="Bienvenido usuario: %s " % (web.cookies().user)
-            #web.setcookie('pagina3', web.cookies().pagina2)
-            #web.setcookie('pagina2', web.cookies().pagina1)
-            #web.setcookie('pagina1', "rss")
         return plantillas.rss_conectado(formulario=res, feed=feed)
-        #except:
-            #l=form_log()
-            #web.header('Content-Type', 'text/html; charset=utf-8')
-            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
-
+   
 # clase donde trabajamos con Highcharts
 class highchart:
 
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        #try: 
-            #res="Bienvenido usuario: %s " % (web.cookies().user)
-            #web.setcookie('pagina3', web.cookies().pagina2)
-            #web.setcookie('pagina2', web.cookies().pagina1)
-            #web.setcookie('pagina1', "highchart")
         return plantillas.highchart(formulario=res)
-        #except:
-            #l=form_log()
-            #web.header('Content-Type', 'text/html; charset=utf-8')
-            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
+    
 
 # clase donde trabajamos con maps
 class mapa:
@@ -378,16 +361,8 @@ class mapa:
     def GET(self):
         res=""
         web.header('Content-Type', 'text/html; charset=utf-8')
-        #try: 
-            #res="Bienvenido usuario: %s " % (web.cookies().user)
-            #web.setcookie('pagina3', web.cookies().pagina2)
-            #web.setcookie('pagina2', web.cookies().pagina1)
-            #web.setcookie('pagina1', "mapa")
         return plantillas.mapa(formulario=res)
-        #except:
-            #l=form_log()
-            #web.header('Content-Type', 'text/html; charset=utf-8')
-            #return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")     
+  
 
 
 # clase donde trabajamos con Twitter
@@ -398,10 +373,6 @@ class twitter:
             l2 = form_twitter_usuario();
             base_datos=""
             rt_medio=0
-            #res="Bienvenido usuario: %s " % (web.cookies().user)
-            #web.setcookie('pagina3', web.cookies().pagina2)
-            #web.setcookie('pagina2', web.cookies().pagina1)
-            #web.setcookie('pagina1', "twitter")
             web.header('Content-Type', 'text/html; charset=utf-8')
             return plantillas.twitter(base_datos=base_datos, formulario="", form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda="", tweets="", rt_medio=rt_medio)
         except:
@@ -469,9 +440,6 @@ class eventos_twitter:
                     locations.append(tweet.coordinates['coordinates'][0])
 
             return plantillas.eventos_twitter(form= l.render(), tweets=tweets, locations=locations)
-
-
-
 
 
 
