@@ -123,6 +123,41 @@ Para instalar Mocha y las distintas librerias:
 En [esta imagen](http://i.imgur.com/TUTInja.png) puedes ver la primera versión de test ejecutada.
 
 
+##Platform as a Service: Heroku
+
+[heroku logo](https://i.gyazo.com/1a3ed7af29f691ed82dda4cac019a1b1.png)
+
+
+[Heroku](https://www.heroku.com/platform) es una plataforma como servicio ("Platform as a Service" o PaaS) de computación en la nube que soporta distintos lenguajes de programación, python, que es el que usamos, entre ellos.
+
+Plataforma con gran cantidad de características:
+
+* Elasticidad y crecimiento: podemos escalar nuestras aplicaciones en cada momento.
+
+* Tamaño: ofrece diferentes tipos de "dynos" (unidades que proveen capacidad de cómputo), cada uno con diferentes capacidades de procesamiento y memoria.
+
+* Routing: internamente los routers realizan un seguimiento de la ubicación de los "Dynos" que estén corriendo, y redirigen el tráfico de acuerdo a la misma.
+
+* Seguimiento: existe un manejador de "Dynos", el cual monitorea de forma continua los dynos que se estén ejecutando. En caso de 
+fallo en un "Dyno", este es eliminado y creado nuevamente.
+
+* Distribución y redundancia: los "Dynos" se encuentran aislados uno de otro. Esto implica que de existir fallos en la infraestructura interna de alguno de ellos, los otros dynos no se ven afectados, y consecuentemente tampoco la aplicación.
+
+
+En nuestro caso, la aplicación desplegada está asociada a este repositorio:
+
+[connect to github](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
+
+Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
+
+Podemos ver como actualizamos la aplicación y desplegamos, tanto en local o en el *dashboard* de Heroku:
+
+Pantallazo en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y desde la [web de Heroku](https://i.gyazo.com/49aef9bf3c8bc2e6ff3b553583d3f46d.png)
+
+
+**Se puede ver desplegada correctamente en [Heroku](https://periodicointeractivo.herokuapp.com/).**
+
+
 ###Frameworks
 
 Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
