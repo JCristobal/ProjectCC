@@ -4,9 +4,23 @@
 	<meta name="author" content="ProyectCC">
 	<meta charset="UTF-8" />
 	<link href="../static/style.css" rel="stylesheet" type="text/css" />
+	<!--SweetAlert-->
+	<script src="../static/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/sweetalert.css">
 </head>
 
-<body>
+
+    <script>
+      function en_desarrollo() {
+		swal({
+		  title: "Módulo en desarrollo",
+		  text: "Todavía no están disponibles todas las funcionalidades",
+		  type: "warning"
+		});
+      }
+    </script>
+
+<body onLoad="en_desarrollo()">
 
 	<header>
 		<div id="titulo"><img id="img_principal" src="../static/makoLogo.png" /></div>
@@ -22,7 +36,9 @@
 		<div id="menu">
 		  <ul>
 		    <li><a href="login" title="Pagina principal">Pagina principal</a></li>
-		    <li><a href="registro" title="Registro">Registro</a></li>
+		    <li><a href="registro" title="Registrarse"><strong>Registro</strong></a></li>
+		    <li><a href="ver_perfil" title="Ver datos"><i>Ver datos de registro</i></a></li>
+		    <li><a href="editar_perfil" title="Editar datos"><i>Editar datos de registro</i></a></li>
 		    <li><a href="rss" title="rss">RSS</a></li>
 		    <li><a href="highchart" title="highchart">Highchart</a></li>
 		    <li><a href="mapa" title="mapa">Google Maps</a></li>
@@ -32,8 +48,8 @@
 
 		<div id="contenido">
 
-			<h2><center> Este es el registro sublime </center></h2>
-			<p>Registrate ya hombre.</p>
+			<h2><center> Registro </center></h2>
+			<p> </p>
 
 			<form action='registro' method='post'>
 				${registro}
@@ -47,6 +63,8 @@
 
 		
 	</div>
+
+
 
 
 </body>

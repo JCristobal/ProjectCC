@@ -11,8 +11,8 @@
 	<header>
 		<div id="titulo"><img id="img_principal" src="../static/makoLogo.png" /></div>
 		<form action='login' method='post'>
-			${formulario}
-			<a href='/logout'>Logout</a>
+			 ${formulario} 
+			<!--<a href='/logout'>Logout</a>-->
 		</form>
 
 	</header>
@@ -23,11 +23,7 @@
 		<div id="menu">
 		  <ul>
 		    <li><a href="login" title="Pagina principal">Pagina principal</a></li>
-		    <li><a href="registro" title="Registro">Registro</a></li>
-		    <li><a href="ver_perfil" title="Ver datos">Ver datos de registro</a></li>
-		    <li><a href="editar_perfil" title="Editar datos">Editar datos de registro</a></li>
-		    <li><a href="mas_visitadas" title="Editar datos">Paginas mas visitadas</a></li>
-		    <li><a href="rss" title="rss">RSS</a></li>
+		    <li><a href="rss" title="rss"><strong>RSS</strong></a></li>
 		    <li><a href="highchart" title="highchart">Highchart</a></li>
 		    <li><a href="mapa" title="mapa">Google Maps</a></li>
 		  	<li><a href="twitter" title="Twitter">Twitter</a></li>
@@ -36,10 +32,10 @@
 
 		<div id="contenido">
 
-			<h2><center>RSS </center></h2>
+			<h2><center>RSS</center></h2>
 
 			<% long = len(feed['entries']) %> 
-			<p> Hay un total de ${long} entradas del RSS </p>
+			<p> Hay un total de ${long} entradas del RSS de <a href="http://elpais.com/" title="El Pais">El Pais</a></p> 
 
 			% for i in range(len(feed.entries)):
 			    <a href='${feed.entries[i].link}'>${feed.entries[i].title}</a>
