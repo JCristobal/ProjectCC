@@ -5,7 +5,6 @@ python:
 
 before_install:
   - "cp script.py test/script.py"
-  - "cp keys.py test/keys.py"
 
 services:
   - mongodb
