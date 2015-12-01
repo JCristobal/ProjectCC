@@ -28,7 +28,7 @@ def test_dbcon():
 
 # test para compobar el conjunto de meses
 def test_meses():
-	lista = [1,1,3,4,5,6,7,8,9,10,11,12]
+	lista = [1,2,3,4,5,6,7,8,9,10,11,12]
 	return lista==meses
 
 # Inserción de un usuario en la base de datos
