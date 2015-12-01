@@ -51,13 +51,13 @@
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
       <p>Consumer keys and access tokens, used for OAuth
-Pendiente de arreglar (ocultar keys)</p>
+(declaradas en Heroku)</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre><span class="n">consumer_key</span> <span class="o">=</span> <span class="s">&#39;UbeG6c5YaR1a7gZYdLqqr7fFN&#39;</span>
-<span class="n">consumer_secret</span> <span class="o">=</span> <span class="s">&#39;BTrE1bbvDz6SuxKxlKF1mHof955YheUjb7gzGoLk590fF4BpIQ&#39;</span>
-<span class="n">access_token</span> <span class="o">=</span> <span class="s">&#39;519720537-MsyxcBoaLUES8U0ECtzinEQ9ivbTMRO4CHBLtk98&#39;</span>
-<span class="n">access_token_secret</span> <span class="o">=</span> <span class="s">&#39;XEhkECGK0z0uVuj9XfC1tMOeZxeSCvdReBzPxTyR1uEDS&#39;</span></pre></div>
+      <div class="highlight"><pre><span class="n">consumer_key</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+<span class="n">consumer_secret</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+<span class="n">access_token</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+<span class="n">access_token_secret</span> <span class="o">=</span> <span class="s">&#39;&#39;</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -85,7 +85,7 @@ Pendiente de arreglar (ocultar keys)</p>
       <div class="highlight"><pre><span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
 
 
-<span class="n">feed</span><span class="o">=</span> <span class="n">feedparser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&#39;portada_elpais.xml&#39;</span><span class="p">)</span>
+<span class="n">feed</span><span class="o">=</span> <span class="n">feedparser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;http://ep00.epimg.net/rss/ccaa/andalucia.xml&quot;</span><span class="p">)</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">application</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="n">autoreload</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
@@ -576,16 +576,7 @@ Pendiente de arreglar (ocultar keys)</p>
       <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">res</span><span class="o">=</span><span class="s">&quot;&quot;</span>
         <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span> 
-            <span class="n">res</span><span class="o">=</span><span class="s">&quot;Bienvenido usuario: </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina3&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina2</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina2&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina1</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina1&#39;</span><span class="p">,</span> <span class="s">&quot;rss&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">rss_conectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">,</span> <span class="n">feed</span><span class="o">=</span><span class="n">feed</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">l</span><span class="o">=</span><span class="n">form_log</span><span class="p">()</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
+        <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">rss_conectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">,</span> <span class="n">feed</span><span class="o">=</span><span class="n">feed</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -612,16 +603,7 @@ Pendiente de arreglar (ocultar keys)</p>
       <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">res</span><span class="o">=</span><span class="s">&quot;&quot;</span>
         <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span> 
-            <span class="n">res</span><span class="o">=</span><span class="s">&quot;Bienvenido usuario: </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina3&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina2</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina2&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina1</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina1&#39;</span><span class="p">,</span> <span class="s">&quot;highchart&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">highchart</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">l</span><span class="o">=</span><span class="n">form_log</span><span class="p">()</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
+        <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">highchart</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -648,16 +630,7 @@ Pendiente de arreglar (ocultar keys)</p>
       <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">res</span><span class="o">=</span><span class="s">&quot;&quot;</span>
         <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span> 
-            <span class="n">res</span><span class="o">=</span><span class="s">&quot;Bienvenido usuario: </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina3&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina2</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina2&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina1</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina1&#39;</span><span class="p">,</span> <span class="s">&quot;mapa&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">mapa</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">l</span><span class="o">=</span><span class="n">form_log</span><span class="p">()</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
+        <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">mapa</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -687,16 +660,12 @@ Pendiente de arreglar (ocultar keys)</p>
             <span class="n">l2</span> <span class="o">=</span> <span class="n">form_twitter_usuario</span><span class="p">();</span>
             <span class="n">base_datos</span><span class="o">=</span><span class="s">&quot;&quot;</span>
             <span class="n">rt_medio</span><span class="o">=</span><span class="mi">0</span>
-            <span class="n">res</span><span class="o">=</span><span class="s">&quot;Bienvenido usuario: </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina3&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina2</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina2&#39;</span><span class="p">,</span> <span class="n">web</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span><span class="o">.</span><span class="n">pagina1</span><span class="p">)</span>
-            <span class="n">web</span><span class="o">.</span><span class="n">setcookie</span><span class="p">(</span><span class="s">&#39;pagina1&#39;</span><span class="p">,</span> <span class="s">&quot;twitter&quot;</span><span class="p">)</span>
             <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">twitter</span><span class="p">(</span><span class="n">base_datos</span><span class="o">=</span><span class="n">base_datos</span><span class="p">,</span> <span class="n">formulario</span><span class="o">=</span><span class="n">res</span><span class="p">,</span> <span class="n">form_twitter</span><span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">form_twitter2</span><span class="o">=</span><span class="n">l2</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje_busqueda</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">tweets</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">rt_medio</span><span class="o">=</span><span class="n">rt_medio</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">twitter</span><span class="p">(</span><span class="n">base_datos</span><span class="o">=</span><span class="n">base_datos</span><span class="p">,</span> <span class="n">formulario</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">form_twitter</span><span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">form_twitter2</span><span class="o">=</span><span class="n">l2</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje_busqueda</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">tweets</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">rt_medio</span><span class="o">=</span><span class="n">rt_medio</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="n">l</span><span class="o">=</span><span class="n">form_log</span><span class="p">()</span>
             <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
+            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error 1. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -747,7 +716,7 @@ Pendiente de arreglar (ocultar keys)</p>
         <span class="k">except</span><span class="p">:</span>
             <span class="n">l</span><span class="o">=</span><span class="n">form_log</span><span class="p">()</span>
             <span class="n">web</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s">&#39;text/html; charset=utf-8&#39;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error. Inicie sesion de nuevo.&quot;</span><span class="p">)</span></pre></div>
+            <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">pagina_desconectado</span><span class="p">(</span><span class="n">formulario</span><span class="o">=</span><span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">mensaje</span><span class="o">=</span><span class="s">&quot;Se ha producido algun error.&quot;</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -796,6 +765,8 @@ Pendiente de arreglar (ocultar keys)</p>
                     <span class="n">locations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">coordinates</span><span class="p">[</span><span class="s">&#39;coordinates&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 
             <span class="k">return</span> <span class="n">plantillas</span><span class="o">.</span><span class="n">eventos_twitter</span><span class="p">(</span><span class="n">form</span><span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">render</span><span class="p">(),</span> <span class="n">tweets</span><span class="o">=</span><span class="n">tweets</span><span class="p">,</span> <span class="n">locations</span><span class="o">=</span><span class="n">locations</span><span class="p">)</span>
+
+
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
