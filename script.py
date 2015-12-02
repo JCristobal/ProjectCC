@@ -388,7 +388,7 @@ class twitter:
 
 
     def POST(self):
-        try:
+        #try:
             l = form_twitter_palabra();
             l2 = form_twitter_usuario();
             base_datos=""
@@ -424,10 +424,10 @@ class twitter:
             else:
                 web.header('Content-Type', 'text/html; charset=utf-8')
                 return plantillas.twitter(base_datos=base_datos, formulario=res, form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda=mensaje, tweets="Error de busqueda", rt_medio=rt_medio)
-        except:
-            l=form_log()
-            web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. X Inicie sesion de nuevo.")
+        #except:
+        #    l=form_log()
+        #    web.header('Content-Type', 'text/html; charset=utf-8')
+        #    return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")
 
 class eventos_twitter:
 
