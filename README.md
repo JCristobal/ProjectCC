@@ -57,46 +57,6 @@ Una vez instalado con `sudo pip install pycco` ejecuto `pycco script.py` o `pycc
 Los documentos generados (html con sus respectivos css) los puedo ver en el directorio [docs/](https://github.com/JCristobal/ProjectCC/tree/master/docs) 
 
 
-##Platform as a Service: Heroku
-
-![heroku logo](https://i.gyazo.com/1a3ed7af29f691ed82dda4cac019a1b1.png)
-
-
-[Heroku](https://www.heroku.com/platform) es una plataforma como servicio ("Platform as a Service" o PaaS) de computación en la nube que soporta distintos lenguajes de programación, python, que es el que usamos, entre ellos. Además ofrece multitud de "add-ons" y facilidades para conectar como otros servicios (como integración con GitHub y un CI).
-
-Plataforma con gran cantidad de características:
-
-* Elasticidad y crecimiento: podemos escalar nuestra aplicacion cuando queramos.
-
-* Tamaño: ofrece diferentes tipos de "dynos" (unidades que proveen capacidad de cómputo), cada uno con diferentes capacidades de procesamiento y memoria.
-
-* Routing: internamente los routers realizan un seguimiento de la ubicación de los "dynos" que estén corriendo, y redirigen el tráfico de acuerdo a la misma.
-
-* Seguimiento: existe un manejador de "dynos", el cual monitorea de forma continua los dynos que se estén ejecutando. En caso de 
-fallo en un "dyno", este es eliminado y creado nuevamente.
-
-* Distribución y redundancia: los "dynos" se encuentran aislados uno de otro. Esto implica que de existir fallos en la infraestructura interna de alguno de ellos, los otros dynos no se ven afectados, y consecuentemente tampoco la aplicación.
-
-Para crear nuestra aplicación en Heroku, ejecutamos, dentro del directorio del proyecto (y con el [toolbelt](https://toolbelt.heroku.com/) de Heroku instalado y configurado) `heroku apps:create --region eu --buildpack heroku/python periodicointeractivo`.
-
-Se pueden declarar variables internas en Heroku, en mi caso `heroku config:set PORT=8080`
-
-Y guardamos los cambios con git. Se pueden enviar a Heroku con `git push heroku`, pero nosotros haremos los cambios en el repositorio de GitHub, y si pasa los test de la CI se desplegará.
-
-En nuestro caso, la aplicación desplegada está asociada a este repositorio, se puede ver en la captura: 
-![asociado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
-
-Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
-
-![Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
-
-Podemos ver como actualizamos la aplicación y desplegamos, tanto en local o en el *dashboard* de Heroku:
-
-Captura en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y desde la [web de Heroku](https://i.gyazo.com/49aef9bf3c8bc2e6ff3b553583d3f46d.png)
-
-
-**Se puede ver desplegada en [Heroku](https://periodicointeractivo.herokuapp.com/).**
-
 
 ##Integración continua
 ###Travis
@@ -161,5 +121,50 @@ Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran c
 * Autentificación de usuarios y sesiones
 * Formularios
 * Servidor web propio para desarrollo
+
+
+
+##Platform as a Service: Heroku
+
+![heroku logo](https://i.gyazo.com/1a3ed7af29f691ed82dda4cac019a1b1.png)
+
+
+[Heroku](https://www.heroku.com/platform) es una plataforma como servicio ("Platform as a Service" o PaaS) de computación en la nube que soporta distintos lenguajes de programación, python, que es el que usamos, entre ellos. Además ofrece multitud de "add-ons" y facilidades para conectar como otros servicios (como integración con GitHub y un CI).
+
+Plataforma con gran cantidad de características:
+
+* Elasticidad y crecimiento: podemos escalar nuestra aplicacion cuando queramos.
+
+* Tamaño: ofrece diferentes tipos de "dynos" (unidades que proveen capacidad de cómputo), cada uno con diferentes capacidades de procesamiento y memoria.
+
+* Routing: internamente los routers realizan un seguimiento de la ubicación de los "dynos" que estén corriendo, y redirigen el tráfico de acuerdo a la misma.
+
+* Seguimiento: existe un manejador de "dynos", el cual monitorea de forma continua los dynos que se estén ejecutando. En caso de 
+fallo en un "dyno", este es eliminado y creado nuevamente.
+
+* Distribución y redundancia: los "dynos" se encuentran aislados uno de otro. Esto implica que de existir fallos en la infraestructura interna de alguno de ellos, los otros dynos no se ven afectados, y consecuentemente tampoco la aplicación.
+
+Para crear nuestra aplicación en Heroku, ejecutamos, dentro del directorio del proyecto (y con el [toolbelt](https://toolbelt.heroku.com/) de Heroku instalado y configurado) `heroku apps:create --region eu --buildpack heroku/python periodicointeractivo`.
+
+Se pueden declarar variables internas en Heroku, en mi caso `heroku config:set PORT=8080`
+
+Y guardamos los cambios con git. Se pueden enviar a Heroku con `git push heroku`, pero nosotros haremos los cambios en el repositorio de GitHub, y si pasa los test de la CI se desplegará.
+
+En nuestro caso, la aplicación desplegada está asociada a este repositorio, se puede ver en la captura: 
+![asociado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
+
+Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
+
+![Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
+
+#### Comprobamos que se despliega con los cambios en GitHub y que pasen su CI
+Se puede ver en las siguientes capturas: después de hacer un cambio en el commit [cb4fbf3](https://github.com/JCristobal/ProjectCC/commit/c24fbf3de72ac6d139fa07c9271019372752b1b6) y de que pase los [test](https://i.gyazo.com/1508db94c04e5317b5fc1dd09ce0eda1.png), vemos como se [despliega en Heroku](https://i.gyazo.com/988c54dc4996e7f188699282b318dd31.png)
+
+Podemos ver como actualizamos la aplicación y desplegamos, tanto en local o en el *dashboard* de Heroku:
+
+Captura en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y desde la [web de Heroku](https://i.gyazo.com/49aef9bf3c8bc2e6ff3b553583d3f46d.png)
+
+
+**Se puede ver desplegada en [Heroku](https://periodicointeractivo.herokuapp.com/).**
 
 
