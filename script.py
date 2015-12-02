@@ -366,6 +366,7 @@ class mapa:
 
 
 # clase donde trabajamos con Twitter
+
 class twitter:
     def GET(self):
         try:
@@ -373,12 +374,17 @@ class twitter:
             l2 = form_twitter_usuario();
             base_datos=""
             rt_medio=0
+            res=""
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            #web.setcookie('pagina3', web.cookies().pagina2)
+            #web.setcookie('pagina2', web.cookies().pagina1)
+            #web.setcookie('pagina1', "twitter")
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.twitter(base_datos=base_datos, formulario="", form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda="", tweets="", rt_medio=rt_medio)
+            return plantillas.twitter(base_datos=base_datos, formulario=res, form_twitter= l.render(), form_twitter2=l2.render(), mensaje_busqueda="", tweets="", rt_medio=rt_medio)
         except:
             l=form_log()
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error 1. Inicie sesion de nuevo.")
+            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error interno.")
 
 
     def POST(self):
@@ -386,7 +392,8 @@ class twitter:
             l = form_twitter_palabra();
             l2 = form_twitter_usuario();
             base_datos=""
-            res="Bienvenido usuario: %s " % (web.cookies().user)
+            #res="Bienvenido usuario: %s " % (web.cookies().user)
+            res=""
             mensaje=""
             rt_medio=0
             if l.validates():
@@ -420,9 +427,8 @@ class twitter:
         except:
             l=form_log()
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error.")
+            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. X Inicie sesion de nuevo.")
 
-# clase donde trabajamos con los eventos de Twitter
 class eventos_twitter:
 
     def GET(self):
@@ -440,8 +446,6 @@ class eventos_twitter:
                     locations.append(tweet.coordinates['coordinates'][0])
 
             return plantillas.eventos_twitter(form= l.render(), tweets=tweets, locations=locations)
-
-
 
 
 if __name__ == "__main__":
