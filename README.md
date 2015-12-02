@@ -84,11 +84,11 @@ Se pueden declarar variables internas en Heroku, en mi caso `heroku config:set P
 Y guardamos los cambios con git. Se pueden enviar a Heroku con `git push heroku`, pero nosotros haremos los cambios en el repositorio de GitHub, y si pasa los test de la CI se desplegará.
 
 En nuestro caso, la aplicación desplegada está asociada a este repositorio, se puede ver en la captura: 
-[asociado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
+![asociado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
 
 Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
 
-[Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
+![Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
 
 Podemos ver como actualizamos la aplicación y desplegamos, tanto en local o en el *dashboard* de Heroku:
 
