@@ -4,16 +4,31 @@
 	<meta name="author" content="ProyectCC">
 	<meta charset="UTF-8" />
 	<link href="../static/style.css" rel="stylesheet" type="text/css" />
+		<!--SweetAlert-->
+	<script src="../static/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/sweetalert.css">
 </head>
 
 <body>
 
+    <script>
+      function en_desarrollo() {
+		swal({
+		  title: "Módulo en desarrollo",
+		  text: "Todavía no están disponibles todas las funcionalidades de registro y logeo",
+		  type: "warning"
+		});
+      }
+    </script>
+
 	<header>
 		<div id="titulo"><img id="img_principal" src="../static/makoLogo.png" /></div>
 
-		<form action='login' method='post'>
+		<!-- <form action='login'  method='post' "> -->
+		<form  onclick="en_desarrollo()" >
 			${formulario}
 			${mensaje}
+			<input type="submit" name="buscar" value="Login" disabled/>
 		</form>
 
 	</header>
@@ -26,7 +41,7 @@
 		    <li><a href="login" title="Pagina principal"><strong>Pagina principal</strong></a></li>
 		    <li><a href="registro" title="Registrarse">Registro</a></li>
 		    <li><a href="rss" title="rss">RSS</a></li>
-		    <li><a href="highchart" title="highchart">Highchart</a></li>
+		    <li><a href="highchart" title="highchart">Gráficas</a></li>
 		    <li><a href="mapa" title="mapa">Google Maps</a></li>
 		  	<li><a href="twitter" title="Twitter">Twitter</a></li>
 		  </ul>

@@ -84,7 +84,7 @@ form_reg = form.Form(
 form_log = form.Form(
     form.Textbox('usuario'),
     form.Password('contrasenia'),
-    form.Button('Login')
+    #form.Button('Login')
 )
 
 form_twitter_palabra = form.Form(
