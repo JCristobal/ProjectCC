@@ -62,31 +62,37 @@ Los documentos generados (html con sus respectivos css) los puedo ver en el dire
 ![heroku logo](https://i.gyazo.com/1a3ed7af29f691ed82dda4cac019a1b1.png)
 
 
-[Heroku](https://www.heroku.com/platform) es una plataforma como servicio ("Platform as a Service" o PaaS) de computación en la nube que soporta distintos lenguajes de programación, python, que es el que usamos, entre ellos.
+[Heroku](https://www.heroku.com/platform) es una plataforma como servicio ("Platform as a Service" o PaaS) de computación en la nube que soporta distintos lenguajes de programación, python, que es el que usamos, entre ellos. Además ofrece multitud de "add-ons" y facilidades para conectar como otros servicios (como integración con GitHub y un CI).
 
 Plataforma con gran cantidad de características:
 
-* Elasticidad y crecimiento: podemos escalar nuestras aplicaciones en cada momento.
+* Elasticidad y crecimiento: podemos escalar nuestra aplicacion cuando queramos.
 
 * Tamaño: ofrece diferentes tipos de "dynos" (unidades que proveen capacidad de cómputo), cada uno con diferentes capacidades de procesamiento y memoria.
 
-* Routing: internamente los routers realizan un seguimiento de la ubicación de los "Dynos" que estén corriendo, y redirigen el tráfico de acuerdo a la misma.
+* Routing: internamente los routers realizan un seguimiento de la ubicación de los "dynos" que estén corriendo, y redirigen el tráfico de acuerdo a la misma.
 
-* Seguimiento: existe un manejador de "Dynos", el cual monitorea de forma continua los dynos que se estén ejecutando. En caso de 
-fallo en un "Dyno", este es eliminado y creado nuevamente.
+* Seguimiento: existe un manejador de "dynos", el cual monitorea de forma continua los dynos que se estén ejecutando. En caso de 
+fallo en un "dyno", este es eliminado y creado nuevamente.
 
-* Distribución y redundancia: los "Dynos" se encuentran aislados uno de otro. Esto implica que de existir fallos en la infraestructura interna de alguno de ellos, los otros dynos no se ven afectados, y consecuentemente tampoco la aplicación.
+* Distribución y redundancia: los "dynos" se encuentran aislados uno de otro. Esto implica que de existir fallos en la infraestructura interna de alguno de ellos, los otros dynos no se ven afectados, y consecuentemente tampoco la aplicación.
 
+Para crear nuestra aplicación en Heroku, ejecutamos, dentro del directorio del proyecto (y con el [toolbelt](https://toolbelt.heroku.com/) de Heroku instalado y configurado) `heroku apps:create --region eu --buildpack heroku/python periodicointeractivo`.
 
-En nuestro caso, la aplicación desplegada está asociada a este repositorio:
+Se pueden declarar variables internas en Heroku, en mi caso `heroku config:set PORT=8080`
 
-[Conectado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
+Y guardamos los cambios con git. Se pueden enviar a Heroku con `git push heroku`, pero nosotros haremos los cambios en el repositorio de GitHub, y si pasa los test de la CI se desplegará.
+
+En nuestro caso, la aplicación desplegada está asociada a este repositorio, se puede ver en la captura: 
+[asociado a GitHub](https://i.gyazo.com/a5f90d999de240911f180bbb6da855f0.png)
 
 Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
 
+[Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
+
 Podemos ver como actualizamos la aplicación y desplegamos, tanto en local o en el *dashboard* de Heroku:
 
-Pantallazo en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y desde la [web de Heroku](https://i.gyazo.com/49aef9bf3c8bc2e6ff3b553583d3f46d.png)
+Captura en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y desde la [web de Heroku](https://i.gyazo.com/49aef9bf3c8bc2e6ff3b553583d3f46d.png)
 
 
 **Se puede ver desplegada en [Heroku](https://periodicointeractivo.herokuapp.com/).**
@@ -121,7 +127,7 @@ El proceso que se sigue es el siguiente:
 ### Shippable  
 ![shippable](https://i.gyazo.com/d303dee5b6b150aa9d70053682a79f26.png)
 
-También usaremos una integración básica en [Shippable](https://app.shippable.com/), podemos ver el estado de proyecto en [su web](https://app.shippable.com/projects/563fafac1895ca447422f754).
+También usaremos una integración básica en [Shippable](https://app.shippable.com/), podemos ver el estado de proyecto en [su web](https://app.shippable.com/projects/563fafac1895ca447422f754) o mediante el *badge* [![build status shippable](https://img.shields.io/shippable/563fafac1895ca447422f754.svg)](https://app.shippable.com/projects/563fafac1895ca447422f754).
 
 
 
@@ -133,30 +139,8 @@ También usaremos una integración básica en [Shippable](https://app.shippable.
 
 unittest soporta la automatización de pruebas, cambio de configuraciones y "apagado" del código si no pasa las pruebas o la independencia de las pruebas de la estructura de información. Proporciona clases que hacen que sea fácil apoyar estas cualidades para un conjunto de pruebas.
 
-![mocha-chai](http://i.imgur.com/fRv28Y6.png)
 
-
-[Mocha](http://mochajs.org/) es un framework para NodeJS para hacer tests unitarios que permite el uso de distintas bibliotecas de aserciones (ya que no dispone de un módulo propio). Usaremos este framework junto a la biblioteca Chai y Supertest.
-
-[Chai](http://chaijs.com/) es una biblioteca de aserciones (assertion library) para NodeJS y para el navegador, que integraremos con  Mocha. Chai nos ayuda a realizar aserciones contra nuestro código. Es muy completo ya que, sin necesidad de plugins, y tiene 2 estilos con los que podemos realizar las aserciones: podemos optar por el estilo TDD (Test-driven development) o BDD(Behavior-Driven Development).
-
-[Supertest](https://github.com/visionmedia/supertest) es otra librería para hacer aserciones HTTP. Permite hacer pruebas HTTP de alto nivel
- y así poder compobar el funcionamiento de nuestro servidor. *Los test con Supertest los haremos sólo en local, ya que no podemos desplegar el servidor en Travis para que realice los test.*
-
-
-Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.js). Para realizarlos ejecutamos `npm test`.
-
-
-Para instalar Mocha y las distintas librerias:
-
-`sudo npm install mocha --save-dev`
-`sudo npm install chai`
-`sudo npm install chai-fs`
-`sudo npm install supertest`
-
-
-En [esta imagen](http://i.imgur.com/TUTInja.png) puedes ver la primera versión de test ejecutada.
-
+Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.py). Para realizarlos localmente  ejecutamos `cp script.py test/script.py | python test/test.py`.
 
 
 
