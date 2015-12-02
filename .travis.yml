@@ -3,14 +3,12 @@ python:
   - '2.6'
   - '2.7'
 
-before_install:
-  - "cp script.py test/script.py"
 
 services:
   - mongodb
 
 # command to install dependencies
 install: "pip install -r requirements.txt"
+
 # command to run tests
-#script: npm install mocha --save-dev; npm install chai; npm install chai-fs; npm install supertest --save-dev;  npm test
 script: python test/test.py

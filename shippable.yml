@@ -9,12 +9,10 @@ python:
 services:
    - mongodb
 
-before_script: 
-   - "cp script.py test/script.py"
 
 #Instalar requerimientos 
 install:
    - pip install -r requirements.txt
 
 script:
-   - nosetests test/test.py
+   - nosetests test.py

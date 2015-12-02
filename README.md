@@ -140,14 +140,16 @@ También usaremos una integración básica en [Shippable](https://app.shippable.
 unittest soporta la automatización de pruebas, cambio de configuraciones y "apagado" del código si no pasa las pruebas o la independencia de las pruebas de la estructura de información. Proporciona clases que hacen que sea fácil apoyar estas cualidades para un conjunto de pruebas.
 
 
-Los tests los podemos encontrar en [test/test.js](https://github.com/JCristobal/ProjectCC/blob/master/test/test.py). Para realizarlos localmente  ejecutamos `cp script.py test/script.py | python test/test.py`.
+Los tests los podemos encontrar en [test.js](https://github.com/JCristobal/ProjectCC/blob/master/test.py). Para realizarlos localmente  ejecutamos `python test.py`.
 
 
 
 
 ###Frameworks
 
-Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. Algunos de ellos serán:
+Con la ayuda de los Frameworks podremos desarrollar un sitio web fácilmente: nos ayudaremos de bibliotecas propias de éstos para acceso a base de datos, plantillas y numerosas facilidades que proporcionan. En éste submódulo estudiaremos y trabajaremos con el que más se adapte a nuestro proyecto, dentro del lenguaje principal de la aplicación, python. 
+
+Actualmente, el usado es web.py:
 
 #### web.py
 
@@ -161,21 +163,3 @@ Una de las ventajas de [web.py](http://webpy.org/) es sus sencillez, y la gran c
 * Servidor web propio para desarrollo
 
 
-#### TurboGears
-
-[Turbogears](http://www.turbogears.org/) es un potente framework con multitud de ventajas:
-
-* Puede empezar como micro-framework hasta alcanzar todas sus funcionalidades
-* Código natural y flexible
-* Conexión con varias BD y acceso a datos WSGI
-* Templates
-
-
-#### Django
-
-[Django](https://www.djangoproject.com/) es un framework web de Python de alto nivel que fomenta el rápido desarrollo y buen diseño. 
-Muy potente y usado, se caracteriza por su:
-
-* Rapidez
-* Seguridad
-* Escalabilidad
