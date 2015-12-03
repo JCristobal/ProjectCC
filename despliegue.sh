@@ -16,6 +16,10 @@ heroku apps:create --region eu --buildpack heroku/python periodicointeractivo-x
 # Declaramos variables internas de Heroku
 heroku config:set PORT=8080
 
+# Desplegamos mongoDB
+# (no disponemos de targeta de crédito, por lo que no podemos desplegarlo)
+# heroku addons:create mongohq:ssd_1g_elastic 
+
 # Desplegamos la aplicación a Heroku
 git push heroku master
 

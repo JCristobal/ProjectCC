@@ -24,10 +24,10 @@ urls = ( '/logout', 'logout',
 
 # Consumer keys and access tokens, used for OAuth
 # (declaradas en Heroku)
-consumer_key = 'UbeG6c5YaR1a7gZYdLqqr7fFN'
-consumer_secret = 'BTrE1bbvDz6SuxKxlKF1mHof955YheUjb7gzGoLk590fF4BpIQ'
-access_token = '519720537-MsyxcBoaLUES8U0ECtzinEQ9ivbTMRO4CHBLtk98'
-access_token_secret = 'XEhkECGK0z0uVuj9XfC1tMOeZxeSCvdReBzPxTyR1uEDS'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 # OAuth process, using the keys and tokens
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -379,7 +379,7 @@ class twitter:
         except:
             l=form_log()
             web.header('Content-Type', 'text/html; charset=utf-8')
-            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error 1. Inicie sesion de nuevo.")
+            return plantillas.pagina_desconectado(formulario=l.render(), mensaje="Se ha producido algun error. Inicie sesion de nuevo.")
 
 
     def POST(self):
