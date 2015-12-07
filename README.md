@@ -1,6 +1,6 @@
 # ProjectCC - Submódulo perteneciente a [PeriodicoInteractivo](https://github.com/ProyectCC/PeriodicoInteractivo)
 
-### Submódulo para mejora o cambio de framework de desarrollo y reestructuración de la aplicación.
+### Submódulo con la estructura de la aplicación y para la extracción de noticias de distintas webs.
 
 
 [![Join the chat at https://gitter.im/JCristobal/ProjectCC](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JCristobal/ProjectCC?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -38,7 +38,7 @@ Ya que éste módulo se encargará de la estructura y del framework que se use, 
 
 ##Relación con la asignatura [CC](https://github.com/JJ/clases-CC-2015-16/)
 
-Con el proyecto realizaremos un desarrollo DevOps, con múltiples herramientas evolucionando a lo largo del curso y practicando los distintos contenidos de éste. Realizaremos test para hacer pruebas unitarias, integración continua, provisionamiento y despligue automático. Dichas actividades se harán coincidiendo con la evolución de la asignatura.
+Con el proyecto realizaremos un desarrollo DevOps, con múltiples herramientas evolucionando a lo largo del curso y practicando los distintos contenidos de éste. Realizaremos test para hacer pruebas unitarias, integración continua, provisionamiento y despliegue automático. Dichas actividades se harán coincidiendo con la evolución de la asignatura.
 
 ##Servicios a usar
 
@@ -54,7 +54,7 @@ Para la documentación se usará [pycco](http://fitzgen.github.io/pycco/), "vers
 
 Una vez instalado con `sudo pip install pycco` ejecuto `pycco script.py` o `pycco *.py` si hay varios archivos python.
 
-Los documentos generados (html con sus respectivos css) los puedo ver en el directorio [docs/](https://github.com/JCristobal/ProjectCC/tree/master/docs) 
+Los documentos generados (html con sus respectivos css) los puedo ver en la rama [gh-pages](https://github.com/JCristobal/ProjectCC/tree/gh-pages) o diréctamente en la [web de documentación del proyecto](http://jcristobal.github.io/ProjectCC/).
 
 
 
@@ -155,7 +155,7 @@ En nuestro caso, la aplicación desplegada está asociada a este repositorio, se
 
 Con lo que cada cambio realizado será testeado y desplegado en caso de que esté todo correcto.
 
-![Despligue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
+![Despliegue sólo si pasa los test del CI](http://i.imgur.com/ZWIpCFb.png)
 
 #### Comprobamos que se despliega con los cambios en GitHub y que pasen su CI
 Se puede ver en las siguientes capturas: después de hacer un cambio en el commit [cb4fbf3](https://github.com/JCristobal/ProjectCC/commit/c24fbf3de72ac6d139fa07c9271019372752b1b6) y de que pase los [test](https://i.gyazo.com/1508db94c04e5317b5fc1dd09ce0eda1.png), vemos como se [despliega en Heroku](https://i.gyazo.com/988c54dc4996e7f188699282b318dd31.png)
