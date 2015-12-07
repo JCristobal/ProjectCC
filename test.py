@@ -86,49 +86,40 @@ class test (unittest.TestCase):
     def test_1(self):	
         self.assertTrue(existe("script.py"))
 
-    def test_2_1(self):	
-        self.assertTrue(existe("docs/pycco.css"))
-
-    def test_2_2(self):	
-        self.assertTrue(existe("docs/script.html"))
-
-    def test_3(self):	
+    def test_2(self):	
         self.assertTrue(existe_clase(registro))
 
-    def test_4(self):	
+    def test_3(self):	
         self.assertTrue(existe_clase(login))
 
-    def test_5(self):	
+    def test_4(self):	
         self.assertTrue(existe_clase(logout))
 
-    def test_6(self):	
+    def test_5(self):	
         self.assertTrue(existe_clase(ver_perfil))
 
-    def test_7(self):	
+    def test_6(self):	
         self.assertTrue(existe_clase(editar_perfil))
 
-    def test_8(self):	
-        self.assertTrue(existe_clase(mas_visitadas))
-
-    def test_9(self):	
+    def test_7(self):	
         self.assertTrue(existe_clase(rss))
 
-    def test_10(self):	
+    def test_8(self):	
         self.assertTrue(existe_clase(highchart))
 
-    def test_11(self):	
+    def test_9(self):	
         self.assertTrue(existe_clase(mapa))
 
-    def test_12(self):	
+    def test_10(self):	
         self.assertTrue(existe_clase(twitter))
 
-    def test_13(self):	
+    def test_11(self):	
         self.assertTrue(existe_clase(eventos_twitter))
 
-    def test_14(self):	
+    def test_12(self):	
         self.assertTrue(test_dbcon())
 
-    def test_15(self):	
+    def test_13(self):	
         self.assertTrue(test_meses())
 
 
