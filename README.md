@@ -181,8 +181,6 @@ y para desplegarlo:
 `sudo docker run -t -i jcristobal/ubuntu-periodicointeractivo`
 
 
-Captura del contenedor descargado y desplegado:
-
-![captura docker](http://i.imgur.com/EVxWRzp.png)
+Imagen del contenedor descargado y desplegado: [captura](http://i.imgur.com/5BlexB8.png)
 
 
