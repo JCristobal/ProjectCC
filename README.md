@@ -168,3 +168,21 @@ Captura en [local](https://i.gyazo.com/2919a39da50ca0d8a9944f02e0fcab40.png) y d
 **Se puede ver desplegada en [Heroku](https://periodicointeractivo.herokuapp.com/).**
 
 
+##Entorno de pruebas mediante contenedores Docker
+
+![logo docker](https://i.gyazo.com/4ef201d6de4251769eea908b56c7c7d2.png)
+
+Antes de desplegarse a producción, las aplicaciones tendrá que probarse en un entorno aislado. Para ello se usa [Docker](https://www.docker.com/), creando un entorno de pruebas para la aplicación. Además se descarga y se deja preaparado para el despliegue de la aplicación (sólo con ejecutar `python home/PeriodicoInteractivo/script.py`). El contenedor está disponible en [DockerHub](https://hub.docker.com/r/jcristobal/ubuntu-periodicointeractivo/), enlazado a un [repositorio propio](https://github.com/JCristobal/ubuntu-periodicointeractivo) que actualizará el contenedor cada vez que se realicen cambios. Para descargarlo simplemente habrá que ejecutar: 
+
+`sudo docker pull jcristobal/ubuntu-periodicointeractivo`
+
+y para desplegarlo: 
+
+`sudo docker run -t -i jcristobal/ubuntu-periodicointeractivo`
+
+
+Captura del contenedor descargado y desplegado:
+
+![captura docker](http://i.imgur.com/EVxWRzp.png)
+
+
