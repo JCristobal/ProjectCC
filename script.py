@@ -4,7 +4,7 @@ from web import form
 from web.contrib.template import render_mako
 from pymongo import MongoClient
 import feedparser
-import tweepy
+#import tweepy
 
 
 web.config.debug = False
@@ -17,8 +17,6 @@ urls = ( '/logout', 'logout',
         '/rss', 'rss',
         '/highchart', 'highchart',
         '/mapa', 'mapa',
-        '/twitter', 'twitter',
-        '/eventos_twitter', 'eventos_twitter',
         '/(.*)', 'login' 
     )
 
@@ -30,10 +28,10 @@ access_token = ''
 access_token_secret = ''
 
 # OAuth process, using the keys and tokens
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+#auth.set_access_token(access_token, access_token_secret)
 # Creation of the actual interface, using authentication
-api = tweepy.API(auth)
+#api = tweepy.API(auth)
 
 
 feed= feedparser.parse("http://ep00.epimg.net/rss/ccaa/andalucia.xml")
